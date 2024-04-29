@@ -9,11 +9,9 @@ import { ThemeProvider } from '@/providers/theme-provider'
 import getInfo from '@/actions/get-info'
 
 const font = Urbanist({ subsets: ['latin'] })
-const name = process.env.STORE_NAME
-const content = process.env.REACT_APP_INFORMATION_API
+const content = process.env.REACT_APP_INFORMATION_API;
 
 export const metadata: Metadata = {
-  title: name,
   description: 'Fashion Store',
 }
 
