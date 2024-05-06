@@ -5,16 +5,18 @@ import getCategories from "@/actions/get-categories";
 import NavbarActions from "./navbar-actions";
 import StoreName from "./store-name";
 import getBillboard from "@/actions/get-billboards";
+import getInfo from "@/actions/get-info";
 
 export const revalidate = 0;
 
 const Navbar = async () => {
-    const billboardId = process.env.REACT_APP_BILLBOARD_ID;
+    const content = process.env.REACT_APP_INFORMATION_API;
+    const info = content ? await getInfo(content) : null;
     const categories = await getCategories();
 
-    let billboard = null;
-    if (billboardId) {
-      billboard = await getBillboard(billboardId);
+    let information = null;
+    if (content) {
+        information = await getInfo(content);
     }
 
     return (
@@ -23,7 +25,7 @@ const Navbar = async () => {
                 <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center">
                 <Link href="/" className="ml-4 flex lg:ml-0 gap-x-2">
                     <div className="font-bold x-xl">
-                {billboard && <StoreName data={billboard} />}</div>
+                {information && <StoreName data={information} />}</div>
                 </Link>
                 <Link href="/allproducts" className="pl-5 ml-1 flex lg:ml-0 gap-x-2">
                     <p className="text-neutral-500 text-sm font-medium">All Products</p>
