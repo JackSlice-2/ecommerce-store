@@ -12,6 +12,7 @@ const font = Urbanist({ subsets: ['latin'] })
 const content = process.env.REACT_APP_INFORMATION_API;
 
 export const metadata: Metadata = {
+  title: 'Fashion Store',
   description: 'Fashion Store',
 }
 
