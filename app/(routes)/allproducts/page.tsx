@@ -1,18 +1,11 @@
 import getAllProducts from "@/actions/get-all-products";
-import getBillboard from "@/actions/get-billboards";
 import ProductList from "@/components/product-list";
 import Container from "@/components/ui/container";
 
 export const revalidate = 0;
 
 const HomePage = async () => {
-  const billboardId = process.env.REACT_APP_BILLBOARD_ID;
   const products = await getAllProducts({});
-
-  let billboard = null;
-  if (billboardId) {
-    billboard = await getBillboard(billboardId);
-  }
 
   return (
     <Container>

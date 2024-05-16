@@ -46,5 +46,12 @@ export interface Info {
     whatsapp: string;
     instagram: string;
     facebook: string;
-    email: string;
+    email: string;   
+    visa: boolean;
+    mastercard: boolean;
+    amex: boolean;
+    hipercard: boolean;
+    elo: boolean;
+    pix: boolean;
+    stripe: boolean; 
 }

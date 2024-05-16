@@ -5,7 +5,6 @@ import { ShoppingCart } from "lucide-react";
 import Currency  from "@/components/ui/currency";
 import Button from "@/components/ui/myButton";
 import { Product } from "@/types";
-import { useRouter } from "next/navigation";
 import useCart from "@/hooks/use-cart";
 import { MouseEventHandler } from "react";
 

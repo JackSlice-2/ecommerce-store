@@ -4,14 +4,12 @@ import MainNav from "./main-nav";
 import getCategories from "@/actions/get-categories";
 import NavbarActions from "./navbar-actions";
 import StoreName from "./store-name";
-import getBillboard from "@/actions/get-billboards";
 import getInfo from "@/actions/get-info";
 
 export const revalidate = 0;
 
 const Navbar = async () => {
     const content = process.env.REACT_APP_INFORMATION_API;
-    const info = content ? await getInfo(content) : null;
     const categories = await getCategories();
 
     let information = null;
