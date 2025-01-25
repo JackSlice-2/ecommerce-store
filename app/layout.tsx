@@ -8,13 +8,20 @@ import ToastProvider from '@/providers/toast-provider'
 import { ThemeProvider } from '@/providers/theme-provider'
 import getInfo from '@/actions/get-info'
 import ClientOnly from '@/components/ClientOnly'
+import Head from 'next/head'
 
 const font = Urbanist({ subsets: ['latin'] })
 const content = process.env.REACT_APP_INFORMATION_API;
 
-export const metadata: Metadata = {
-  title: 'Fashion Store',
-  description: 'Fashion Store',
+export async function generateMetadata(): Promise<Metadata> {
+  // Fetch the info data
+  const info = content ? await getInfo(content) : null;
+
+  return {
+    title: info ? info.name : 'Empty',
+    description: info ? info.name : 'Empty',
+    icons: `${info ? info.icon : '/images/favicon.svg'}`,
+  }
 }
 
 export default async function RootLayout({
@@ -24,9 +31,14 @@ export default async function RootLayout({
 }) {
   const info = content ? await getInfo(content) : null;
 
+  const faviconUrl = info ? info.icon : '/images/favicon.svg';
+
   return (
     <html lang="en">
       <body className={font.className}>
+        <Head>
+          <link rel="icon" href={faviconUrl} />
+          </Head>
         <ClientOnly>
           <ThemeProvider attribute='class' 
             defaultTheme='system' enableSystem>
