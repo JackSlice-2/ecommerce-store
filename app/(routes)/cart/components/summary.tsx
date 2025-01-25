@@ -9,6 +9,8 @@ import Button from "@/components/ui/myButton";
 import Currency from "@/components/ui/currency";
 import useCart from "@/hooks/use-cart";
 import { toast } from "react-hot-toast";
+import PayPalButton from '@/components/PayPalButton';
+import CalculateFreight from './cep';
 
 const Summary = () => {
   const searchParams = useSearchParams();
@@ -37,6 +39,7 @@ const Summary = () => {
 
     window.location = response.data.url;
   }
+  const clientId = "AbjWPM0J_96lLv-qqJ5sd-HuSO2wo-E232z38HOBbEWGh9TmndNGYYuqwO9UTyStwA956ztROik_6eRE";
 
   return ( 
     <div
@@ -57,6 +60,10 @@ const Summary = () => {
       className="w-full mt-6 cursor-pointer">
         Stripe Checkout
       </Button>
+      <div className="p-5">
+      <PayPalButton clientId={clientId} totalPrice={totalPrice}/>
+      </div>
+      <CalculateFreight />
     </div>
   );
 }
