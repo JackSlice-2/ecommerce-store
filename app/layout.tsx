@@ -7,6 +7,7 @@ import ModalProvider from '@/providers/modal-provider'
 import ToastProvider from '@/providers/toast-provider'
 import { ThemeProvider } from '@/providers/theme-provider'
 import getInfo from '@/actions/get-info'
+import ClientOnly from '@/components/ClientOnly'
 
 const font = Urbanist({ subsets: ['latin'] })
 const content = process.env.REACT_APP_INFORMATION_API;
@@ -26,14 +27,16 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <ThemeProvider attribute='class' 
-        defaultTheme='system' enableSystem>
-        <ModalProvider />
-        <ToastProvider />
-        <Navbar />
-        {children}
-        </ThemeProvider>
-        <Footer data={info}/>
+        <ClientOnly>
+          <ThemeProvider attribute='class' 
+            defaultTheme='system' enableSystem>
+          <ModalProvider />
+          <ToastProvider />
+          <Navbar />
+          {children}
+          </ThemeProvider>
+          <Footer data={info}/>
+        </ClientOnly>
       </body>
     </html>
   )
