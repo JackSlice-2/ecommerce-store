@@ -13,7 +13,7 @@ const StoreName: React.FC<StoreNameProps> = ({
     footer
 }) => {
     return (
-        <a href="/" className={`items-center
+        <a href="/" className={`items-center m-1
             ${footer ? ('flex-col') : ('flex')}
             `}>
             <Image src={data.icon} alt="" className="mr-4 my-1 rounded-full"
