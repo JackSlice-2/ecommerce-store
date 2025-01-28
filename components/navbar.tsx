@@ -20,8 +20,8 @@ const Navbar = async () => {
     return (
         <div className="border-b">
             <Container>
-                <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center">
-                <div className="font-bold x-xl">
+                <div className="relative px-4 sm:px-6 lg:px-8 flex h-auto max-h-24 items-center">
+                <div>
                 {information && <StoreName data={information} />}</div>
                 <Link href="/allproducts" className="pl-5 ml-1 flex lg:ml-0 gap-x-2">
                     <p className="text-neutral-500 text-lg font-medium transition-colors hover:text-black dark:hover:text-white">All Products</p>

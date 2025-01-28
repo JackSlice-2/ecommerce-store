@@ -13,12 +13,12 @@ const StoreName: React.FC<StoreNameProps> = ({
     footer
 }) => {
     return (
-        <a href="/" className={`items-center m-1
+        <a href="/" className={`items-center m-1 mr-4
             ${footer ? ('flex-col') : ('flex')}
             `}>
-            <Image src={data.icon} alt="" className="mr-4 my-1 rounded-full"
-                width={footer ? (80) : (70)}
-                height={footer ? (80) : (70)} 
+            <Image src={data.icon} alt="" className="w-auto h-14 mr-3 my-2 rounded-full"
+                width={100}
+                height={100} 
             />
             <div className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             {data.name}
