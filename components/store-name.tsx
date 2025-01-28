@@ -17,8 +17,8 @@ const StoreName: React.FC<StoreNameProps> = ({
             ${footer ? ('flex-col') : ('flex')}
             `}>
             <Image src={data.icon} alt="" className="mr-4 my-1 rounded-full"
-                width={120}  
-                height={120} 
+                width={footer ? (120) : (90)}  
+                height={footer ? (120) : (90)} 
             />
             <div className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             {data.name}
