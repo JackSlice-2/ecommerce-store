@@ -35,7 +35,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body className={`${font.className} light:bg-neutral-100`}>
         <ClientOnly>
           <Head>
             <link rel="icon" href={faviconUrl} />

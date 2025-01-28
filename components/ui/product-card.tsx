@@ -39,9 +39,9 @@ const ProductCard: React.FC<ProductCard> = ({
   }
 
   return ( 
-    <div onClick={handleClick} className="dark:bg-gray-900 bg-white group cursor-pointer rounded-xl border p-3 space-y-4 hover:scale-110">
+    <div onClick={handleClick} className="dark:bg-gray-900 bg-slate-100 group cursor-pointer rounded-xl border p-3 space-y-4 hover:scale-110">
       {/* Image & actions */}
-      <div className="aspect-square rounded-xl bg-gray-100 relative">
+      <div className="aspect-square rounded-xl bg-gray-300 relative">
         <Image 
           src={data?.images?.[0]?.url} 
           alt="" 
