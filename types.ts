@@ -17,8 +17,8 @@ export interface Product {
     name: string;
     price: string;
     isFeatured: boolean;
-    size: Size;
-    color: Color;
+    Size: Size;
+    Color: Color;
     images: Image[];
 };
 
