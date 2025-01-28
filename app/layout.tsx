@@ -36,10 +36,10 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <Head>
-          <link rel="icon" href={faviconUrl} />
-          </Head>
         <ClientOnly>
+          <Head>
+            <link rel="icon" href={faviconUrl} />
+          </Head>
           <ThemeProvider attribute='class' 
             defaultTheme='system' enableSystem>
           <ModalProvider />

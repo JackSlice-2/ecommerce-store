@@ -24,7 +24,7 @@ const Navbar = async () => {
                 <div className="font-bold x-xl">
                 {information && <StoreName data={information} />}</div>
                 <Link href="/allproducts" className="pl-5 ml-1 flex lg:ml-0 gap-x-2">
-                    <p className="text-neutral-500 text-sm font-medium">All Products</p>
+                    <p className="text-neutral-500 text-lg font-medium transition-colors hover:text-black dark:hover:text-white">All Products</p>
                 </Link>
                 <MainNav data={categories}/>
                 <NavbarActions />
